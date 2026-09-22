@@ -14,7 +14,11 @@ variable_y = np.array([15,25,35,45,55])
 #Entrenamiento de nuestro modelo LR
 modelo_lr = LinearRegression() 
 
-modelo_lr.fit(variable_x,variable_y) 
-#En streamlit tenemos un botón que dice Predecir y al darle click activará las lineas de código del if
-if st.button("Predecir"): resultado = modelo_lr.predict([[gasto]])
-    st.success(f"Las ventas proyectadas para una inversion de ${gasto} son: ${resultado[0]}")
+modelo_lr.fit(variable_x, variable_y)
+
+# En Streamlit tenemos un botón que dice Predecir
+if st.button("Predecir"):
+    resultado = modelo_lr.predict([[gasto]])
+    st.success(
+        f"Las ventas proyectadas para una inversión de ${gasto} son: ${resultado[0]}"
+    )
